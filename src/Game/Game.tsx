@@ -17,7 +17,7 @@ function getWordFromCurr(curr: { row: number, col: number }[], board: boardNode[
 
 function Game() {
   const [isWin, setIsWin] = useState<boolean>(false);
-  const [foundWords, setFoundWords] = useState<number>(6);
+  const [foundWords, setFoundWords] = useState<number>(0);
   const [currWord, setCurrWord] = useState<{ row: number, col: number }[]>([]);
   const [completedWords, setCompletedWords] = useState<{ row: number, col: number }[][]>([]);
   const [board, _setBoard] = useState(generateBoard(gamedata.words));
