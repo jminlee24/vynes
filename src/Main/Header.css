@@ -14,16 +14,17 @@
   font-family: var(--font-ui);
   font-weight: 800;
   letter-spacing: -0.03em;
-  font-size: 40px;
+  font-size: var(--text-3xl);
   line-height: 1.05;
+  color: color-mix(in srgb, var(--color-dark) 88%, var(--color-primary));
 }
 
 .header-subtitle {
   margin: 0;
   font-family: var(--font-ui);
   font-weight: 600;
-  font-size: 12px;
-  letter-spacing: 0.08em;
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
   color: var(--muted);
   white-space: nowrap;

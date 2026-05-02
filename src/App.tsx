@@ -14,16 +14,16 @@ function App() {
           </div>
 
           <div className="app-layout">
+            <section className="card theme-card" aria-label="Theme">
+              <div className="theme-title">Today's Theme</div>
+              <div className="theme-body">
+                Happy Birthday Vivian!
+              </div>
+            </section >
+
             <section className="card game-card">
               <Game />
             </section>
-
-            <aside className="card theme-card" aria-label="Theme">
-              <div className="theme-title">Theme</div>
-              <div className="theme-body">
-                Choose a theme to play.
-              </div>
-            </aside>
           </div>
         </main>
       </div>

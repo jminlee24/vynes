@@ -1,3 +1,132 @@
-#game-root {
+.game-container {
   margin: 0;
+}
+
+.blurred {
+  filter: blur(6px);
+  background: rgba(0, 0, 0, 0.5);
+  transition: filter 0.3s ease;
+  pointer-events: none;
+}
+
+img{
+  opacity:1;
+}
+
+.win-modal {
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+
+  transform: scale(1);
+  animation: pop 0.2s ease-out;
+}
+
+.win-modal button {
+  margin-top: 20px;
+  padding: 10px 16px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: var(--color-primary);
+  color: white;
+  cursor: pointer;
+}
+
+.win-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(6, 60px);
+  grid-template-rows: repeat(9, 60px);
+  height: 540px;
+  width: 360px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.board-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.line-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 360px;
+  height: 540px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.board {
+  position: relative;
+  z-index: 1;
+}
+
+.tracker {
+  text-align: center;
+}
+
+.word-tracker {
+  text-align: center;
+  height: 50px;
+  font-size: 36px;
+}
+
+.char {
+  border: 0;
+  margin: 0;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.char:hover {
+  font-size: 28px;
+}
+
+.char>div {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.char>div:hover {
+  background-color: var(--color-primary);
+}
+
+.char-selected {
+  background-color: var(--color-primary);
+}
+
+.char-correct {
+  background-color: var(--color-secondary);
+  color: var(--color-accent)
 }

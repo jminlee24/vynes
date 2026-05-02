@@ -20,9 +20,9 @@ body {
 
   /* Your palette (source of truth) */
   --color-primary: #3891a6; /* teal */
+  --color-secondary: #0A44C1; 
   --color-accent: #fac8cd; /* soft pink */
   --color-accent-soft: #d7bcc8; /* muted lavender/pink */
-  --color-secondary: #5d576b; /* desaturated purple */
   --color-dark: #1a1423; /* near-black */
 
   /* Theme tokens (consumed by components) */
@@ -32,23 +32,43 @@ body {
 
   --text: var(--color-dark);
   --muted: var(--color-secondary);
-  --rule: color-mix(in srgb, var(--color-secondary) 28%, transparent);
+  --rule: color-mix(in srgb, var(--color-secondary) 34%, transparent);
+  --border: 2px;
 
   --accent: var(--color-primary);
   --accent-ink: #ffffff;
   --link: var(--color-primary);
 
-  --radius-sm: 10px;
-  --radius-md: 16px;
+  --radius-sm: 14px;
+  --radius-md: 22px;
 
-  --shadow-1: 0 1px 2px color-mix(in srgb, var(--color-secondary) 18%, transparent);
-  --shadow-2: 0 12px 32px color-mix(in srgb, var(--color-secondary) 18%, transparent);
+  --shadow-1: 0 2px 0 color-mix(in srgb, var(--color-secondary) 20%, transparent),
+    0 10px 24px color-mix(in srgb, var(--color-secondary) 14%, transparent);
+  --shadow-2: 0 3px 0 color-mix(in srgb, var(--color-secondary) 22%, transparent),
+    0 18px 44px color-mix(in srgb, var(--color-secondary) 16%, transparent);
 
   --ring: 0 0 0 3px color-mix(in srgb, var(--color-primary) 28%, transparent);
 
-  --font-ui: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  /* Rounder / cuter UI font stack (falls back gracefully) */
+  --font-ui: ui-rounded, "SF Pro Rounded", "Avenir Next Rounded", Nunito, Quicksand,
+    ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+
+  /* Type scale */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-md: 18px;
+  --text-lg: 18px;
+  --text-xl: 22px;
+  --text-2xl: 28px;
+  --text-3xl: 40px;
+
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0.005em;
+  --tracking-wide: 0.08em;
+
+  --body-weight: 600;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -72,13 +92,23 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.35;
+  line-height: 1.55;
+  font-size: var(--text-md);
+  letter-spacing: var(--tracking-normal);
+  font-weight: var(--body-weight);
 }
 
 a {
   color: var(--link);
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.16em;
+}
+
+/* Friendly defaults for headings */
+h1,
+h2,
+h3 {
+  letter-spacing: var(--tracking-tight);
 }
 
 ::selection {
@@ -92,46 +122,9 @@ select {
   font: inherit;
 }
 
-button {
-  appearance: none;
-  border: 1px solid var(--rule);
-  background: var(--surface);
-  color: var(--text);
-  border-radius: 12px;
-  padding: 10px 14px;
-  line-height: 1.05;
-  cursor: pointer;
-  box-shadow: var(--shadow-1);
-}
-
-button:hover {
-  border-color: color-mix(in srgb, var(--color-dark) 28%, transparent);
-  box-shadow: var(--shadow-2);
-}
-
-button:active {
-  transform: translateY(1px);
-}
-
-button:focus-visible {
-  outline: none;
-  box-shadow: var(--shadow-1), var(--ring);
-}
-
-/* Optional modern “primary” button */
-.btn-primary {
-  border-color: color-mix(in srgb, var(--accent) 55%, transparent);
-  background: color-mix(in srgb, var(--accent) 14%, var(--surface));
-}
-
-.btn-primary:hover {
-  border-color: color-mix(in srgb, var(--accent) 70%, transparent);
-  background: color-mix(in srgb, var(--accent) 18%, var(--surface));
-}
-
 hr {
   border: 0;
-  border-top: 1px solid var(--rule);
+  border-top: var(--border) solid var(--rule);
 }
 
 
