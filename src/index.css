@@ -74,6 +74,14 @@ body {
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
+
+    /* Your palette (source of truth) */
+    --color-secondary: #3891a6; /* teal */
+    --color-primary: #0A44C1; 
+    --color-accent-soft: #fac8cd; /* soft pink */
+    --color-accent: #d7bcc8; /* muted lavender/pink */
+    --color-dark: #1a1423; /* near-black */
+
     --bg: var(--color-dark);
     --surface: color-mix(in srgb, var(--color-dark) 86%, white);
     --text: color-mix(in srgb, white 94%, var(--color-accent-soft));

@@ -16,7 +16,7 @@
   letter-spacing: -0.03em;
   font-size: var(--text-3xl);
   line-height: 1.05;
-  color: color-mix(in srgb, var(--color-dark) 88%, var(--color-primary));
+  color: color-mix(in srgb, var(--text) 88%, var(--color-primary));
 }
 
 .header-subtitle {
